@@ -125,10 +125,13 @@
                 document.getElementById("my_account_popUp").style.top = "0px"
                 document.getElementById("ul_header_options").style.display = "none";
                 document.getElementById("nav_bar_img").src = "./images/menu.png";
+                document.getElementById("header_responsive").style.pointerEvents = "none";
+                
         }
         
         function exitPOP() {
             document.getElementById("my_account_popUp").style.display = "none"
+            document.getElementById("header_responsive").style.pointerEvents = "all";
         }
         function sign_in() {
             document.getElementById("sign_in_option").style.display = "flex"
