@@ -1,0 +1,503 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Grotesk:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.go_up {
+    position: fixed;
+    right: 30px;
+    bottom: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 300ms 50ms;
+}
+.go_up.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+.image_scroll_up {
+    width: 50px;
+    height: 50px;
+    
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(255,255,255);
+    background: linear-gradient(360deg, rgba(255,255,255,1) 0%, rgba(17,118,179,1) 50%, rgba(10,63,107,1) 100%);
+}
+  
+
+
+
+
+
+
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    width: 100%;
+    height: 1000px;
+    position: relative;
+}
+
+
+
+
+/*the responsive menu bar*/
+.responsive_header_bar {
+    width: 30px;
+    height: 30px;
+    display: none;
+    pointer-events: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pointer-events: all;
+    cursor: pointer;
+    z-index: 99;
+}
+.ul_header_responsive {
+    width: 100vw;
+    display: none;
+    flex-direction: column;
+    gap: 1px;
+    align-items: center;
+    background-color: #1764D1;
+    position: absolute;
+    top: 63px;
+    right: 0;
+    z-index: 99;
+}
+.responsive_links_header {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    font-family: 'Overpass', sans-serif;
+    color: #ededed;
+}
+.responsive_links_header a {
+    color: #ededed;
+}
+.responsive_links_header:focus {
+    background-color: #0D47A1;
+}
+.social-media_respon-header {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: content-box;
+    background-color: white;
+}
+.social-media_respon-header:focus {
+    background-color: white;
+}
+.darkBlue_block {
+    width: 100%;
+    height: 19.5px;
+    background-color: #152238;
+}
+.social-media_flexbox {
+    position: absolute;
+    padding: 10px 15px 10px 15px;
+    display: flex;
+    gap: 15px;
+    background-color: #152238;
+}
+.fa {
+    display: grid;
+    place-items: center;
+    color: white;
+}
+/*DONE*/
+
+
+
+
+
+header {
+    width: 100%;
+    height: 63px;
+    display: flex;
+    justify-content: center;
+    background-color: #FBFCFF;
+    transition: all 0.15s ease-in-out 0.05s;
+
+}
+nav{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    height: 41px;
+    cursor: pointer;
+}
+.ul_header {
+    width: 350px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.links_header {
+    width: 70px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+    list-style: none;
+    font-family: 'Overpass', sans-serif;
+    color: #240115;
+    font-size: 13.5px;
+    cursor: pointer;
+    transition: all 200ms 50ms;
+    position: relative;
+    overflow: hidden;
+}
+.links_header::after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: #1764D1;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: transform 200ms ease-in-out;
+    transform-origin: right;
+    transform: scaleX(0);
+}
+
+.links_header:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+.links_header:hover {
+    background-color: rgb(242, 242, 242);
+}
+.my_account {
+    box-sizing: content-box;
+    width: 15px;
+    padding: 8px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: all 0.15s ease-in-out 0.05s;
+    cursor: pointer;
+}
+.my_account:hover {
+    background-color: #ededed;
+    border-radius: 50%;
+}
+.my_account_p {
+    height: 100%;
+    font-family: 'Raleway', sans-serif;
+    color: #240115;
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+}
+
+.login_signin_popup_page_wraper {
+    width: 100%;
+    height: 100%;
+    display: none;
+    place-items: center;
+    position: fixed;
+    transition: all 0.2s ease-in-out 0.05ms;
+}
+.login_signin_popup_page_wraper::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.3;
+}
+.login_signin_popup_page {
+    width: 210px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #FBFCFF;
+    position: absolute;
+    border-radius: 5px;
+    align-items: center;
+    z-index: 5;
+}
+
+/* the option themselfs*/
+.login_signIn_options {
+    width: 90px;
+    height: 33px;
+    border-radius: 5px;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    color: #240115;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out 0.05;
+
+}
+.login_signIn_options:hover {
+    background-color: #ededed;
+}
+#exit_sign_in_popupPage {
+    height: 33px;
+    width: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 200ms 50ms;
+    position: relative;
+    cursor: pointer;
+}
+#exit_sign_in_popupPage::before {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: #1764D1;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: transform 200ms ease-in-out;
+    transform-origin: right;
+    transform: scaleX(0);
+}
+
+#exit_sign_in_popupPage:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+.log_in_option {
+    width: 450px;
+    height: 410px;
+    background-color: white;
+    z-index: 4;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    z-index: 50;
+}
+.go_back_wraper {
+    width: 90%;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    border-bottom: 2px solid #f4f4f4;
+}
+#go_back {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Raleway', sans-serif;
+    color: #240115;
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 10px;
+    transition: all 300ms 50ms;
+}
+#go_back:hover {
+    background-color: #ededed;
+    rotate: 360deg;
+}
+.Only_inputs_log_in {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+.log_in_inputs_bottuns {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 17px;
+    padding-top: 15px;
+}
+.logIn_signIn_inputs {
+    width: 100%;
+    height: 35px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: solid 1px #f4f4f4;
+    padding-left: 10px;
+    transition: all 400ms 0ms;
+    font-size: 15px;
+    font-weight: 500;
+    background-color: #ededed;
+    outline: none;
+    border-radius: 5px;
+}
+
+.logIn_signIn_inputs:focus {
+    border-bottom: solid #1764D1 1px;
+    width: 105%;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+.remeber_me_log_in, .dont_have_account {
+    text-align: left;
+    margin-top: 10px;
+    cursor: pointer;
+    width: fit-content;
+    transition: all 400ms 0ms;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Raleway', sans-serif;
+}
+.remeber_me_log_in:hover ,.remeber_me_log_in:focus{
+    font-size: 16px;
+    outline: #1764D1;
+    border: none;
+}
+.checkbox_login:checked {
+    background-color: green;
+}
+.pass_account {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.dont_have_account {
+    font-size: 15.45px;
+    width: fit-content;
+    color:steelblue;
+
+}
+.dont_have_account:hover ,.dont_have_account:focus{
+    font-size: 16px;
+    text-decoration: underline;
+    border: none;
+}
+.log_in_button {
+    margin-top: 20px;
+}
+.logIn_signIn_button {
+    width: 100%;
+    height: 30px;
+    background-color: #1764D1;
+    border-radius: 30px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 200ms 0ms;
+    font-family: 'Raleway', sans-serif;
+}
+.logIn_signIn_button:hover {
+    opacity: 0.7;
+}
+.logIn_signIn_button:focus {
+    outline: none;
+    border: none;
+}
+.need_help {
+    font-size: 13px;
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+}
+.need_help:hover, .need_help:focus {
+    text-decoration: underline;
+}
+
+
+
+
+.sign_in_option {
+    width: 455px;
+    height: 410px;
+    background-color: white;
+    z-index: 4;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+}
+.Only_inputs_wraper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.sign_in_inputs_bottuns {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    padding-top: 15px;
+}
+.sign_in_option h1 {
+    font-size: 30px;
+    text-align: center;
+}
+.pass_word_sign_in {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+
+main {
+    font-family: 'Raleway', sans-serif;
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .ul_header {
+        display: none;
+        pointer-events: none;
+    }
+    .responsive_header_bar {
+        display: flex;
+    }
+}
