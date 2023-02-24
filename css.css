@@ -73,31 +73,37 @@ body {
 }
 .ul_header_responsive {
     width: 100vw;
+    height: 450px;
     display: none;
     flex-direction: column;
+    justify-content: space-between;
     gap: 1px;
     align-items: center;
-    background-color: #1764D1;
+    background: rgb(23,100,209);
+    background: linear-gradient(180deg, rgba(23,100,209,1) 0%, rgba(21,34,56,1) 90%);
     position: absolute;
     top: 63px;
     right: 0;
     z-index: 99;
 }
+.responsive_links_header-wraper {
+    width: 100%;
+}
 .responsive_links_header {
     width: 100%;
     height: 65px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
     list-style: none;
     font-family: 'Overpass', sans-serif;
     color: #ededed;
 }
 .responsive_links_header a {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
     color: #ededed;
-}
-.responsive_links_header:focus {
-    background-color: #0D47A1;
 }
 .social-media_respon-header {
     width: 100%;
