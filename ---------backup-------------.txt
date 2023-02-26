@@ -1,3 +1,144 @@
+---------the html back up-------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/iUnivers-logo-only-i.png" type="image/icon type" class="logo_title">
+    <script src="https://kit.fontawesome.com/81535ba2d6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css.css" >
+    <title>TECH | Home Page</title>
+</head>
+<body>
+    <img src="./images/background_top-page.jpg" alt="" style="width: 100%; position:absolute;">
+    <a href="#" class="go_up"><img src="./images/up-arrow.png" alt="scroll up" class="image_scroll_up"></a>
+
+    <!--header-->
+    <header>
+        <nav id="nav">
+
+            <!--the main header(not the responsive)-->
+            <img class="logo" src="./images/iUnivers-logo .svg" alt="logo">
+            <ul class="ul_header">
+                <li class="links_header">Home</li>
+                <li class="links_header">Store</li>
+                <li class="links_header">About</li>
+                <li class="links_header">Contact</li>
+                <aside class="my_account_wraper" style="display: flex; flex-direction: column; position: relative;" onclick="func()">
+                    <div class="my_account">
+                        <img src="./images/user.png" alt="my account">
+                    </div>
+                </aside>   
+            </ul>
+
+            <!--the responsive header (the first image is the menu bar)-->
+            <div class="responsive_header_bar" id="header_responsive">
+                <img src="./images/menu.png" id="nav_bar_img" style="width: 16px; height: 16px;" onclick="responsive_bar()">
+                <ul class="ul_header_responsive" id="ul_header_options">
+                    <div class="responsive_links_header-wraper">
+                        <li class="responsive_links_header"><a href="#">Home</a></li>
+                        <li class="responsive_links_header"><a href="#">Store</a></li>
+                        <li class="responsive_links_header"><a href="#">About</a></li>
+                        <li class="responsive_links_header"><a href="#">Contact</a></li>
+                        <li class="responsive_links_header" onclick="func()">My account</li>
+                    </div>
+                    <li class="responsive_links_header social-media_respon-header">
+                        <div class="darkBlue_block"></div>
+                        <div class="darkBlue_block"></div>
+                        <aside class="social-media_flexbox">
+                            <a href=""><i class="fa-brands fa-facebook-f fa"></i></a>
+                            <a href=""><i class="fa-brands fa-instagram fa"></i></a>
+                            <a href=""><i class="fa-brands fa-twitter fa"></i></a>
+                            <a href=""><i class="fa-brands fa-tiktok fa"></i></a>
+                        </aside>
+                    </li>
+                </ul>
+            </div>
+        
+        
+        </nav>
+    </header>
+
+
+
+    <aside class="login_signin_popup_page_wraper" id="my_account_popUp">
+
+        <!--the options between signin and log in-->
+        <section class="login_signin_popup_page" id="optins_log_in_signIn">
+            <p class="login_signIn_options" onclick="log_in()">Login</p>
+            
+            <p class="login_signIn_options" onclick="sign_in()">Sign In</p>
+            <div class="exit_wraper" id="exit_sign_in_popupPage" onclick="exitPOP()">
+                <img src="./images/reject.png">
+            </div>
+        </section>    
+
+        <!--the log in page-->
+        <section class="log_in_option" id="log_in_option">
+            <aside class="go_back_wraper"><img src="./images/iUnivers-logo .svg" style="width: 100px;"><div id="go_back" onclick="goback()"><img src="./images/right-arrow.png" alt="go back"></div></aside>
+            <form class="form_login">
+                <h1 class="logIn_signIn_h1">Log In</h1>
+                <aside class="inouts_wraper_login">
+                    <div class="user_password-inputs_login">
+                        <input type="text" placeholder="Enter Your Username" class="logIn_signIn_inputs" required>
+                        <input type="password" placeholder="Enter Your Passcode" class="logIn_signIn_inputs" required>
+                    </div>
+                    <div style="width: 100%;">
+                        <label class="remeber_me_log_in"><input type="checkbox" class="checkbox_login"> remember me</label>
+                    </div>
+                    <button class="logIn_signIn_button log_in_button" type="submit">Log In</button>
+                    <p class="dont-have-account-register">Dont have an account? <a id="register_link" onclick="sign_in()">Register</a></p>               
+                </aside>
+            </form>
+        </section>
+    
+        <!--sign in page-->
+        <section class="sign_in_option" id="sign_in_option">
+            <aside class="go_back_wraper"><img src="./images/iUnivers-logo .svg" style="width: 100px;"><div id="go_back" onclick="goback()"><img src="./images/right-arrow.png" alt="go back"></div></aside>
+            <form class="form_signin">
+                <h1 class="logIn_signIn_h1">Sign in</h1>
+                <div class="signin_inputs_button_help">
+                    <div class="inputs_wraper" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <input type="text" placeholder="Enter Username" required class="logIn_signIn_inputs">
+                        <input type="email" placeholder="Enter your email" required class="logIn_signIn_inputs">
+                        <div class="password_sign_in">
+                            <!--setting password and reEntering it-->
+                            <input type="password" placeholder="Enter password" required class="logIn_signIn_inputs">
+                            <input type="password" placeholder="Confirm your password" required class="logIn_signIn_inputs">
+                        </div>
+                    </div>
+                    <button type="submit" class="logIn_signIn_button">Sign in</button>
+                    <div class="needHelp_wraper">
+                        <a href="#" class="need_help">Need Help?</a>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+
+
+    </aside>
+
+    
+    
+    <main style="display: flex; flex-direction: column; align-items: center;">
+        <h1 style="color: black;" id="hello">There will be some products here</h1>
+    </main>
+
+
+
+    <!--attribute to the javascript file-->
+    <script src="./javascriptTech.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+-------------the css backup-----------
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Grotesk:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 * {
@@ -19,12 +160,22 @@
     pointer-events: auto;
 }
 .image_scroll_up {
-    color: black;
-    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    
 }
 
 
-
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(255,255,255);
+    background: linear-gradient(360deg, rgba(255,255,255,1) 0%, black 100%);
+}
   
 
 
@@ -69,7 +220,7 @@ body {
     gap: 1px;
     align-items: center;
     background: rgb(251,252,255);
-    background: linear-gradient(360deg, #ededed , white 100%);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(135,206,235,1) 40%, rgba(30,144,255,1) 85%);
     position: absolute;
     top: 63px;
     right: 0;
@@ -94,33 +245,7 @@ body {
     place-items: center;
     color: black;
 }
-.responsive_options_log_sign_wraper {
-    width: 100%;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap:4px;
-    background-color: transparent;
-}
-.responsive_options_log_sign_wraper :nth-child(2) {
-    margin-bottom: 10px;
-}
-.responsive_options_log-sign {
-    display: grid;
-    place-items: center;
-    width: 50%;
-    height: 30px;
-    padding: 2px 0px 2px 0px;
-    box-sizing: content-box;
-    border-radius: 5px;
-    list-style: none;
-    background-color: black;
-    font-family: 'Overpass', sans-serif;
-    color: white;
-    font-weight: 500;
-}
-.social-media_respon-header_wraper {
+.social-media_respon-header {
     width: 100%;
     height: 40px;
     display: flex;
@@ -128,19 +253,19 @@ body {
     justify-content: space-between;
     position: relative;
     box-sizing: content-box;
-    background-color: transparent;
+    background-color: black;
 }
 .darkBlue_block {
     width: 100%;
     height: 19.5px;
-    background-color: #ededed;
+    background-color: #1E90FF;
 }
-.social-media_flexbox_icon {
+.social-media_flexbox {
     position: absolute;
     padding: 10px 15px 10px 15px;
     display: flex;
     gap: 15px;
-    background-color: #ededed;
+    background-color: #1E90FF;
 }
 .fa {
     display: grid;
@@ -239,47 +364,55 @@ nav{
     overflow: hidden;
 }
 
-
-
-.login_signin_popup_page {
-    width: 130px;
-    height: 70px;
-    padding: 5px;
+.login_signin_popup_page_wraper {
+    width: 100%;
+    height: 100%;
     display: none;
-    flex-direction: column;
-    gap: 5px;
-    justify-content: space-between;
-    background-color: black;
-    box-shadow: 0px 3px 8px grey;
-    position: absolute;
-    right: 75px;
-    top: 60px;
-    border-radius: 5px;
-    z-index: 99999;;
+    place-items: center;
+    position: fixed;
+    transition: all 0.2s ease-in-out 0.05ms;
 }
+.login_signin_popup_page_wraper::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.3;
+}
+.login_signin_popup_page {
+    width: 210px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #FBFCFF;
+    position: absolute;
+    border-radius: 5px;
+    align-items: center;
+    z-index: 5;
+}
+
 /* the option themselfs*/
 .login_signIn_options {
-    width: 100%;
-    height: 40px;
-    padding: 3px 0px 3px 0px;
+    width: 90px;
+    height: 33px;
     border-radius: 5px;
     display: grid;
     place-content: center;
     text-align: center;
     font-family: 'Raleway', sans-serif;
-    color: white;
+    color: #240115;
     font-size: 16px;
     font-weight: 500;
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-sizing: content-box;
-    background-color: black;
+    transition: all 0.2s ease-in-out 0.05;
+
 }
 .login_signIn_options:hover {
-    color: black;
-    background-color: white;
+    background-color: #ededed;
 }
 #exit_sign_in_popupPage {
     height: 33px;
@@ -308,29 +441,18 @@ nav{
     transform-origin: left;
     transform: scaleX(1);
 }
-
-.logIn_signIn_section_wraper {
-    width: 100%; 
-    height: 0px;
-    display: grid; 
-    place-items: center;
-    background: transparent;
-    backdrop-filter: blur(15px);
-    position: absolute;
-    top: 0;
-    z-index: 9999999999;
-}
 .log_in_option {
     width: 400px;
     height: 350px;
     background-color: white;
+    z-index: 4;
     display: none;
     flex-direction: column;
     align-items: center;
     border-radius: 15px;
-    z-index: 99999;
-    position: relative;
+    z-index: 50;
 }
+
 /*common to both signin and login*/
 .go_back_wraper {
     width: 90%;
@@ -402,14 +524,13 @@ nav{
     outline: none;
     border-radius: 5px;
 }
+/*DONE*/
 .logIn_signIn_inputs:focus {
-    border-bottom: solid black 1px;
+    border-bottom: solid #1764D1 1px;
     width: 105%;
     outline: none;
     margin-bottom: 10px;
 }
-/*DONE*/
-
 
 .remeber_me_log_in {
     text-align: left;
@@ -479,12 +600,11 @@ nav{
     width: 400px;
     height: 350px;
     background-color: white;
+    z-index: 4;
     display: none;
     flex-direction: column;
     align-items: center;
     border-radius: 15px;
-    z-index: 9999;
-    position: relative;
 }
 .form_signin {
     width: 90%;
@@ -550,3 +670,7 @@ main {
         display: flex;
     }
 }
+
+
+
+------------the javascript backup----------------

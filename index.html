@@ -4,44 +4,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./images/noText-logo.png" type="image/icon type">
+    <link rel="icon" href="./images/logo-apple-3.png" type="image/icon type" class="logo_title">
     <script src="https://kit.fontawesome.com/81535ba2d6.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css.css" >
-    <title>TECH | Home Page</title>
+    <title>iUnivers | Home Page</title>
 </head>
-<body>
-    <a href="#" class="go_up"><img src="./images/up-arrow.png" alt="scroll up" class="image_scroll_up"></a>
+<body id="body">
+    <img src="./images/background_top-page.jpg" alt="" style="width: 100%; position:absolute; top: 63px;">
+    <a href="#" class="go_up"><i class="fa-solid fa-arrow-up image_scroll_up"></i></a>
 
     <!--header-->
     <header>
         <nav id="nav">
 
-            <img class="logo" src="./images/logo.png" alt="logo">
+            <!--the main header(not the responsive)-->
+            <img class="logo" src="./images/iUnivers-logo .svg" alt="logo">
             <ul class="ul_header">
                 <li class="links_header">Home</li>
                 <li class="links_header">Store</li>
                 <li class="links_header">About</li>
                 <li class="links_header">Contact</li>
-                <aside class="my_account_wraper" style="display: flex; flex-direction: column; position: relative;" onclick="func()">
+                <aside class="my_account_wraper" style="display: flex; flex-direction: column; position: relative;" onclick="account_clicked()" id="my_account_clickEvent">
                     <div class="my_account">
                         <img src="./images/user.png" alt="my account">
                     </div>
-                </aside>   
+
+                </aside>    
             </ul>
+            <!--not responsive-->
+            <section class="login_signin_popup_page" id="optins_log_in_signIn">
+                <p class="login_signIn_options" onclick="log_in()">Login</p>
+                
+                <p class="login_signIn_options" onclick="sign_in()">Sign In</p>
+
+            </section>  
+            <!--Done-->
+
+
+
+
+            <!--the responsive header (the first image is the menu bar)-->
             <div class="responsive_header_bar" id="header_responsive">
                 <img src="./images/menu.png" id="nav_bar_img" style="width: 16px; height: 16px;" onclick="responsive_bar()">
-                <ul class="ul_header_responsive" id="ul_header_options">
+                <ul class="ul_header_responsive" id="ul_header_options_responsive">
                     <div class="responsive_links_header-wraper">
-                        <li class="responsive_links_header"><a href="../../Desktop/שי לא לגעת!@/a ;) fontend mentor/fylo-dark-theme-landing-page-master/fylo-dark-theme-landing-page-master/indexHtml/index.html">Home</a></li>
+                        <li class="responsive_links_header"><a href="#">Home</a></li>
                         <li class="responsive_links_header"><a href="#">Store</a></li>
                         <li class="responsive_links_header"><a href="#">About</a></li>
                         <li class="responsive_links_header"><a href="#">Contact</a></li>
-                        <li class="responsive_links_header" onclick="func()">My account</li>
+                        <li class="responsive_links_header" onclick="account_clicked()">My account</li>
+                        <aside class="responsive_options_log_sign_wraper" id="wraper_of_log_sign_In_responsive">
+                            <li class="responsive_options_log-sign" onclick="log_in()" id="log_in_button_responsive">log in</li>
+                            <li class="responsive_options_log-sign" onclick="sign_in()" id="log_in_button_responsive">sign in</li>
+                        </aside>
                     </div>
-                    <li class="responsive_links_header social-media_respon-header">
+
+                    <li class="responsive_links_header social-media_respon-header_wraper">
                         <div class="darkBlue_block"></div>
                         <div class="darkBlue_block"></div>
-                        <aside class="social-media_flexbox">
+                        <aside class="social-media_flexbox_icon">
                             <a href=""><i class="fa-brands fa-facebook-f fa"></i></a>
                             <a href=""><i class="fa-brands fa-instagram fa"></i></a>
                             <a href=""><i class="fa-brands fa-twitter fa"></i></a>
@@ -56,59 +77,57 @@
     </header>
 
 
-
-    <aside class="login_signin_popup_page_wraper" id="my_account_popUp">
-
+        <!--delete this from css .login_signin_popup_page_wraper-->
         <!--the options between signin and log in-->
-        <section class="login_signin_popup_page" id="optins_log_in_signIn">
-            <p class="login_signIn_options" onclick="log_in()">Login</p>
-            
-            <p class="login_signIn_options" onclick="sign_in()">Sign In</p>
-            <div class="exit_wraper" id="exit_sign_in_popupPage" onclick="exitPOP()">
-                <img src="./images/reject.png">
-            </div>
-        </section>    
+ 
 
-        <!--the log in page-->
-        <section class="log_in_option" id="log_in_option">
-            <aside class="go_back_wraper"><img src="./images/noText-logo.png" style="width: 45px;"><div id="go_back" onclick="goback()"><img src="./images/right-arrow.png" alt="go back"></div></aside>
-            <form class="log_in_inputs_bottuns">
-                <h1 style="font-family: 'Raleway', sans-serif; font-size: 30px;">Log In</h1>
-                <div class="Only_inputs_log_in">
-                    <input type="text" placeholder="Enter Your Username" class="logIn_signIn_inputs" required>
-                    <input type="password" placeholder="Enter Your Passcode" class="logIn_signIn_inputs" required>
-                    <div style="width: 100%;">
-                        <label class="remeber_me_log_in"><input type="checkbox" class="checkbox_login"> remember me</label>
+
+        <section class="logIn_signIn_section_wraper" id="logIn_signIn_section_wraper">
+            <!--the log in page-->
+            <section class="log_in_option" id="log_in_option">
+                <aside class="go_back_wraper"><img src="./images/iUnivers-logo .svg" style="width: 100px;"><div id="go_back" onclick="goback()"><img src="./images/right-arrow.png" alt="go back"></div></aside>
+                <form class="form_login">
+                    <h1 class="logIn_signIn_h1">Log In</h1>
+                    <aside class="inouts_wraper_login">
+                        <div class="user_password-inputs_login">
+                            <input type="text" placeholder="Enter Your Username" class="logIn_signIn_inputs" required>
+                            <input type="password" placeholder="Enter Your Passcode" class="logIn_signIn_inputs" required>
+                        </div>
+                        <div style="width: 100%;">
+                            <label class="remeber_me_log_in"><input type="checkbox" class="checkbox_login"> remember me</label>
+                        </div>
+                        <button class="logIn_signIn_button log_in_button" type="submit">Log In</button>
+                        <p class="dont-have-account-register">Dont have an account? <a id="register_link" onclick="sign_in()">Register</a></p>               
+                    </aside>
+                </form>
+            </section>
+        
+            <!--sign in page-->
+            <section class="sign_in_option" id="sign_in_option">
+                <aside class="go_back_wraper"><img src="./images/iUnivers-logo .svg" style="width: 100px;"><div id="go_back" onclick="goback()"><img src="./images/right-arrow.png" alt="go back"></div></aside>
+                <form class="form_signin">
+                    <h1 class="logIn_signIn_h1">Sign in</h1>
+                    <div class="signin_inputs_button_help">
+                        <div class="inputs_wraper" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                            <input type="text" placeholder="Enter Username" required class="logIn_signIn_inputs">
+                            <input type="email" placeholder="Enter your email" required class="logIn_signIn_inputs">
+                            <div class="password_sign_in">
+                                <!--setting password and reEntering it-->
+                                <input type="password" placeholder="Enter password" required class="logIn_signIn_inputs">
+                                <input type="password" placeholder="Confirm your password" required class="logIn_signIn_inputs">
+                            </div>
+                        </div>
+                        <button type="submit" class="logIn_signIn_button">Sign in</button>
+                        <div class="needHelp_wraper">
+                            <a href="#" class="need_help">Need Help?</a>
+                        </div>
                     </div>
-                    <div class="pass_account">
-                        <a href="#" class="dont_have_account" onclick="sign_in()">Don't Have An Account</a>
-                    </div>
-                    <button class="logIn_signIn_button log_in_button" type="submit">Log In</button>
-                    <a href="#" style="font-size: 14px; color: grey; margin-top: 10px;" class="need_help">Need Help?</a>
-                </div>
-            </form>
+                </form>
+            </section>
         </section>
-    
-        <section class="sign_in_option" id="sign_in_option">
-            <aside class="go_back_wraper"><img src="./images/noText-logo.png" style="width: 45px;"><div id="go_back" onclick="goback()"><img src="./images/right-arrow.png" alt="go back"></div></aside>
-            <form class="sign_in_inputs_bottuns">
-                <h1 style="    font-family: 'Raleway', sans-serif; font-size: 30px;">Sign in</h1>
-                <div class="Only_inputs_wraper">
-                    <input type="text" placeholder="Enter Username" required class="logIn_signIn_inputs">
-                    <input type="email" placeholder="Enter your email" required class="logIn_signIn_inputs">
-                    <div class="pass_word_sign_in">
-                        <input type="password" placeholder="Enter password" required class="logIn_signIn_inputs">
-                        <input type="password" placeholder="Confirm your password" required class="logIn_signIn_inputs">
-                    </div>
-                    <button type="submit" class="logIn_signIn_button">Sign in</button>
-                    <a href="#" style="font-size: 14px; color: grey; margin-top: 10px;" class="need_help">Need Help?</a>
-                </div>
-            </form>
-        </section>
 
 
 
-    </aside>
 
     
     
@@ -118,58 +137,7 @@
 
 
 
-    
-    <script>
-        function func() {
-                document.getElementById("my_account_popUp").style.display = "grid" 
-                document.getElementById("my_account_popUp").style.top = "0px"
-                document.getElementById("ul_header_options").style.display = "none";
-                document.getElementById("nav_bar_img").src = "./images/menu.png";
-                document.getElementById("header_responsive").style.pointerEvents = "none";
-                
-        }
-        
-        function exitPOP() {
-            document.getElementById("my_account_popUp").style.display = "none"
-            document.getElementById("header_responsive").style.pointerEvents = "all";
-        }
-        function sign_in() {
-            document.getElementById("sign_in_option").style.display = "flex"
-            document.getElementById("optins_log_in_signIn").style.display = "none"
-            document.getElementById("log_in_option").style.display = "none"
-        }
-        function log_in() {
-            document.getElementById("log_in_option").style.display = "flex"
-            document.getElementById("optins_log_in_signIn").style.display = "none"
-        }
-        function goback() {
-            document.getElementById("log_in_option").style.display = "none"
-            document.getElementById("optins_log_in_signIn").style.display = "flex"
-            document.getElementById("sign_in_option").style.display = "none"
-        }
-
-        function responsive_bar() {
-
-            if (document.getElementById("ul_header_options").style.display == "none") {
-                document.getElementById("ul_header_options").style.display = "flex";
-                document.getElementById("nav_bar_img").src = "./images/close.png";
-            } else {
-                document.getElementById("ul_header_options").style.display = "none";
-                document.getElementById("nav_bar_img").src = "./images/menu.png";
-            }
-        }
-
-        const toTop = document.querySelector(".go_up");
-
-        window.addEventListener("scroll", () => {
-            if (window.pageYOffset > 50) { 
-                toTop.classList.add("active");
-            } else {
-                toTop.classList.remove("active");
-            }
-        })
-
-
-    </script>
+    <!--attribute to the javascript file-->
+    <script src="./javascriptTech.js"></script>
 </body>
 </html>
